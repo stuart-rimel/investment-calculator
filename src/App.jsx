@@ -2,7 +2,6 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Results from "./components/Results";
 import UserInput from "./components/UserInput";
-import { calculateInvestmentResults } from "./util/investment";
 
 function App() {
   const [userInput, setUserInput] = useState({
@@ -21,14 +20,12 @@ function App() {
     });
   }
 
-  const results = calculateInvestmentResults(userInput);
-
   return (
     <>
       <Header />
       <main>
         <UserInput onInputChange={handleChange} userInput={userInput} />
-        <Results results={results} />
+        <Results userInput={userInput} />
       </main>
     </>
   );
