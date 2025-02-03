@@ -20,12 +20,19 @@ function App() {
     });
   }
 
+  // Just need to check duration (make sure it's > 0)
+  const inputIsValid = userInput.duration > 0;
+
   return (
     <>
       <Header />
       <main>
         <UserInput onInputChange={handleChange} userInput={userInput} />
-        <Results userInput={userInput} />
+        {inputIsValid ? (
+          <Results userInput={userInput} />
+        ) : (
+          <p className="center">Please input duration &gt; 0</p>
+        )}
       </main>
     </>
   );
