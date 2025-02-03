@@ -17,7 +17,7 @@ export default function Results({ results }) {
       <tbody>
         {results.map((result, rowIndex) => {
           cumInterest += result.interest;
-          const { year, valueEndOfYear, interest, annualInvestment } = result;
+          const { year, valueEndOfYear, interest } = result;
           return (
             <tr key={rowIndex}>
               <td>{year}</td>
